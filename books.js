@@ -4,10 +4,10 @@ function renderBooks(filter) {
   const books = getBooks()
 
   if (filter === "LOW_TO_HIGH") {
-    books.sort((a, b) => a.originalPrice - b.origionalPrice)
+    books.sort((a, b) => a.salePrice - b.salePrice)
   }
   else if (filter === "HIGH_TO_LOW") {
-    books.sort((a, b) => b.originalPrice - a.origionalPrice)
+    books.sort((a, b) => b.salePrice - a.salePrice)
   }
   else if (filter === "RATING") {
     books.sort((a, b) => b.rating - a.rating)
@@ -34,7 +34,7 @@ function renderBooks(filter) {
 }
 
 function ratingsHTML(rating) {
-  let ratingHTML = ''
+  let ratingHTML = ""
   for (let i = 0; i < Math.floor(rating); ++i) {
     ratingHTML += '<i class="fas fa-star"></i>\n'
   }
