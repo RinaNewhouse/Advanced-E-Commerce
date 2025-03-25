@@ -25,7 +25,7 @@ function renderBooks(filter) {
           ${ratingsHTML(book.rating)}
         </div>
         <div class="book__price">
-          <span class="book__price--normal">$${book.originalPrice.toFixed(2)}</span> $${book.salePrice.toFixed(2)}
+          ${priceHTML(book.originalPrice.toFixed(2), book.salePrice.toFixed(2))}
         </div>
       </div>`
   }).join("")
@@ -43,6 +43,15 @@ function ratingsHTML(rating) {
     ratingHTML += '<i class="fas fa-star-half-alt"></i>\n'
   }
   return ratingHTML
+}
+
+function priceHTML(originalPrice, salePrice) {
+  if(!salePrice) {
+    return `$${originalPrice.toFixed(2)}`
+  }
+  else {
+    return `<span class "book__price--normal">$${originalPrice}</span> $${salePrice}`
+  }
 }
 
 function filterBooks(event) {
