@@ -7,7 +7,7 @@ function renderBooks(filter) {
     books.sort((a, b) => a.salePrice - b.salePrice)
   }
   else if (filter === "HIGH_TO_LOW") {
-    books.sort((a, b) => b.salePrice - a.salePrice)
+    books.sort((a, b) => b.salePrice - a.originalPrice)
   }
   else if (filter === "RATING") {
     books.sort((a, b) => b.rating - a.rating)
@@ -20,7 +20,7 @@ function renderBooks(filter) {
         </figure>
         <div class="book__title">
           ${book.title}
-        </div>`
+        </div>
         <div class="book__ratings">
           ${ratingsHTML(book.rating)}
         </div>
