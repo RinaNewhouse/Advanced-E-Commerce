@@ -50,7 +50,7 @@ function priceHTML(originalPrice, salePrice) {
     return `$${originalPrice.toFixed(2)}`
   }
   else {
-    return `<span class "book__price--normal">$${originalPrice}</span> $${salePrice}`
+    return `<span class="book__price--normal">$${originalPrice.toFixed(2)}</span> $${salePrice.toFixed(2)}`
   }
 }
 
