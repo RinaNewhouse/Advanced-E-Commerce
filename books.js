@@ -20,7 +20,7 @@ function renderBooks(filter) {
         </figure>
         <div class="book__title">
           ${book.title}
-        </div>
+        </div>`
         <div class="book__ratings">
           ${ratingsHTML(book.rating)}
         </div>
