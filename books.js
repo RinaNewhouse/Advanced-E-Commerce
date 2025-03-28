@@ -45,7 +45,10 @@ function ratingsHTML(rating) {
 }
 
 function priceHTML(originalPrice, salePrice) {
-  if(!salePrice) {
+  originalPrice = Number(originalPrice) || 0
+  salePrice = salePrice ? Number(salePrice) : null
+
+  if (!salePrice) {
     return `$${originalPrice.toFixed(2)}`
   }
   else {
